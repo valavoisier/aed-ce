@@ -8,10 +8,12 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
 # Fichiers IA (ne jamais commit)
 AGENTS.md
 CLAUDE.md
 .ai-config.json
+
 ###> phpunit/phpunit ###
 /phpunit.xml
 /.phpunit.cache/
