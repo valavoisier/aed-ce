@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact - centre équestre Goudelancourt{% endblock %}
+
+{% block content %}
+{% include 'partials/headers/header-classic.html.twig' with {
+        image: 'images/gris.png',
+        title: 'Contactez-nous',
+        breadcrumb: 'Formulaire de contact'
+    } 
+%}
+<section class="section">
+    <div class="container">
+
+        <div id="map" class="wow slideInUp"></div>
+
+        <div class="row contactv2 text-center">
+            <div class="col-md-4">
+                <div class="small-box">
+                    <i class="flaticon-email"></i>
+                    <h4>Téléphone</h4>
+                    <small>Téléphone: 03 23 22 40 49</small>
+                    <small>Fax: 03 23 22 40 50</small>
+                    <p><a href="mailto:coordo.equi@aed-asso.fr">coordo.equi@aed-asso.fr</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="small-box">
+                    <i class="flaticon-map-with-position-marker"></i>
+                    <h4>Adresse</h4>
+                    <small>3 Rue de l'Église, </small>
+                    <small>02820 Goudelancourt-lès-Berrieux</small>
+                    <p><a href="#">Voir sur Google Map</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="small-box">
+                    <i class="flaticon-share"></i>
+                    <h4>Réseaux Sociaux</h4>
+                    <small>Instagram: @centre.equestre.goudelancourt</small>
+                    <small>Facebook: facebook.com/centreequestre.goudelancourt</small>
+                    <p><a href="#">Email Newsletter</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="section-title text-center">
+                    <h3>Formulaire de Contact</h3>
+                    <p>Veuillez remplir le formulaire ci-dessous pour nous contacter. Nous vous répondrons dans
+                        les plus brefs délais.</p>
+                </div>
+
+                <form class="big-contact-form" role="search">
+                    <input type="text" class="form-control" placeholder="Votre nom..">
+                    <input type="email" class="form-control" placeholder="Votre email..">
+                    <input type="text" class="form-control" placeholder="Votre téléphone..">
+                    <input type="text" class="form-control" placeholder="Sujet..">
+                    <textarea class="form-control" placeholder="Votre message.."></textarea>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
+

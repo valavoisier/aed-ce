@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact - centre équestre Goudelancourt{% endblock %}
+
+{% block content %}
+{% include 'partials/headers/header-classic.html.twig' with {
+        image: 'images/bai.png',
+        title: 'Pension Chevaux & Poneys',
+        breadcrumb: 'Pension Chevaux & Poneys'
+    } 
+%}
+ <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="content blog-list">
+                            <div class="blog-wrapper clearfix">
+                                <div class="blog-meta">
+                                    <small><a href="#">Pension</a></small>
+                                    <h3>Leur bien-être est notre priorité</h3>
+
+                                </div><!-- end blog-meta -->
+
+                                <div class="blog-media">
+                                    <img src="{{ asset('upload/boxes.jpg') }}" alt="" class="img-fluid img-rounded">
+                                </div><!-- end media -->
+
+                                <div class="blog-desc-big">
+                                    <p class="lead">L'équipe de l'ESAT de Saint-Erme s'occupe de l'entretien des <a
+                                            href="#">infrastructures</a> et du bien-être quotidien des chevaux et
+                                        poneys.</p>
+                                    <p>Parce que leur bien-être est notre priorité, nous accueillons chevaux et poneys
+                                        dans un environnement adapté, avec une attention quotidienne portée à leur
+                                        confort et leur bien-être.</p>
+
+                                    <blockquote class="text-center">
+                                        "Le centre équestre est ouvert 7 jours sur 7, toute l'année."
+                                    </blockquote>
+
+                                    <hr class="invis">
+
+                                </div><!-- end desc -->
+                            </div><!-- end blog -->
+                        </div><!-- end content -->
+
+
+                    </div><!-- end col -->
+
+                    <div class="sidebar col-md-4">
+                        <div class="widget clearfix">
+                            <div class="banner-widget">
+                                <img src="{{ asset('upload/paddock.jpg') }}" alt="competition" class="img-fluid img-rounded">
+                            </div>
+                        </div>
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Prestations</h3>
+                            <div class="newsletter-widget">
+                                <h5>La pension comprend:</h5>
+                                <div class="blog-meta">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">Surveillance quotidienne</li><br>
+                                        <li class="list-inline-item">Accès aux installations</li><br>
+                                        <li class="list-inline-item">Espace de travail adaptés</li><br>
+                                        <li class="list-inline-item">Boxes vidés entièrement<span> (1 fois par
+                                                semaine)</span></li><br>
+                                        <li class="list-inline-item">Boxes paillés chaque jour</li><br>
+                                        <li class="list-inline-item">3 repas granulés par jour</li><br>
+                                        <li class="list-inline-item">Foin (pension foin)</li><br>
+                                        <li class="list-inline-item">Sortie quotidienne au paddock</li>
+                                    </ul>
+                                </div><!-- end blog-meta -->
+
+                            </div><!-- end baby poney -->
+                        </div><!-- end widget -->
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Tarifs</h3>
+                            <div class="post-widget">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5>Pension mensuelle TTC</h5>
+                                        <div class="blog-meta">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">Pension cheval : 290.29€</li><br>
+                                                <li class="list-inline-item">Pension Poney : 248.40€</li><br>
+                                                <li class="list-inline-item">Pension shetland : 195.89€</li><br>
+                                                <li class="list-inline-item">Foin : 40€</li><br>
+                                                <li class="list-inline-item">Débourrage : sur devis</li>
+                                            </ul>
+                                        </div><!-- end blog-meta -->
+                                    </div>
+                                </div>
+
+                            </div><!-- end post-widget -->
+                        </div><!-- end widget -->
+
+
+                    </div><!-- end sidebar -->
+                </div><!-- end row -->
+
+            </div><!-- end container -->
+        </section>
+        <section class="section logos-section">
+            <div class="container">
+                <div class="row justify-content-center align-items-center text-center">
+                    <h3>Nos labels de qualité</h3>
+                    <div class="col-6 col-md-4">
+                        <img src="{{ asset('upload/plaquette-efe.png') }}" alt="Logo 1" class="img-fluid logo-item">
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <img src="{{ asset('upload/plaquette-handi.png') }}" alt="Logo 2" class="img-fluid logo-item">
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <img src="{{ asset('upload/Logo_BEA.jpg') }}" alt="Logo 3" class="img-fluid logo-item">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('video/SpotClarbec_.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contact - centre équestre Goudelancourt{% endblock %}
+
+{% block content %}
+{% include 'partials/headers/header-classic.html.twig' with {
+        image: 'images/poney.png',
+        title: 'Poney Club',
+        breadcrumb: 'Poney Club'
+    } 
+%}
+<section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="content blog-list">
+                            <div class="blog-wrapper clearfix">
+                                <div class="blog-meta">
+                                    <small><a href="#">Cours Poney</a></small>
+                                    <h3>Des premières découvertes à l'autonomie, chacun évolue à son rythme</h3>
+
+                                </div><!-- end blog-meta -->
+
+                                <div class="blog-media">
+                                    <img src="{{ asset('upload/lalie.jpg') }}" alt="" class="img-fluid img-rounded">
+                                </div><!-- end media -->
+
+                                <div class="blog-desc-big">
+                                    <p class="lead">Cours poneys variés à partir de 5 ans : reprises, stages, jeux,
+                                        balades, concours...</p>
+                                    <p>Integer eu urna sit amet dolor fringilla vulputate. Sed diam nunc, pellentesque
+                                        sed lobortis non, tincidunt et sem. Sed sollicitudin elementum mi eget lobortis.
+                                        Aliquam molestie rhoncus nisl, vitae molestie leo imperdiet ac. Aliquam diam
+                                        est, aliquam vitae tristique nec, pretium a libero. Vivamus tempor sed turpis
+                                        sit amet malesuada.</p>
+
+                                    <p> Cras eu lacus et nulla dignissim <a href="#">ultrices</a>. Duis ullamcorper
+                                        finibus quam, sed convallis massa pharetra nec. Duis nec molestie dolor. Nam
+                                        augue neque, efficitur vel lacus sit amet, consequat pharetra massa. Proin nunc
+                                        magna, congue vitae justo ut, dignissim dapibus enim. Integer sollicitudin lacus
+                                        a iaculis molestie. Donec quis consequat erat. Cras vitae consequat sem. Integer
+                                        eleifend purus congue, gravida sem eu, pharetra sapien. Nunc venenatis, lacus id
+                                        pretium volutpat, augue eros accumsan leo, eu condimentum velit nulla nec sem.
+                                        Donec interdum bibendum eros, ut facilisis nunc malesuada id. Nulla quis ex non
+                                        magna sollicitudin sodales vestibulum nec massa. Nullam ut nibh quis est aliquet
+                                        viverra mattis eu ligula. Pellentesque dui mi, ultricies ut velit id, iaculis
+                                        lacinia est. </p>
+
+                                    <blockquote class="text-center">
+                                        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+                                        adipisci velit..."
+                                    </blockquote>
+
+                                    <p>Integer eu urna <a href="#">sit amet dolor fringilla vulputate</a>. Sed diam
+                                        nunc, pellentesque sed lobortis non, tincidunt et sem. Sed sollicitudin
+                                        elementum mi eget lobortis. Aliquam molestie rhoncus nisl, vitae molestie leo
+                                        imperdiet ac. Aliquam diam est, aliquam vitae tristique nec, pretium a libero.
+                                        Vivamus tempor sed turpis sit amet malesuada.</p>
+
+                                    <p> Quisque at vestibulum neque. Duis eget sapien ac quam interdum euismod. Mauris
+                                        blandit tincidunt neque, vitae vestibulum tortor dapibus non. Nunc eu
+                                        sollicitudin diam. Proin vel erat vitae augue eleifend convallis. Curabitur ut
+                                        risus id ex finibus rhoncus sit amet a libero. Aenean a turpis eget nisi posuere
+                                        tempor. Aliquam iaculis sem eros. Fusce nec erat eget sem aliquam congue quis
+                                        vitae mi. Praesent varius dictum cursus. </p>
+
+                                    <hr class="invis">
+
+
+                                </div><!-- end desc -->
+                            </div><!-- end blog -->
+                        </div><!-- end content -->
+
+                        <div class="authorbox">
+                            <div class="site-publisher clearfix">
+                                <img src="{{ asset('upload/Logo-Poney-Club-de-France.png') }}" alt="" class="img-fluid img-circle">
+                                <a href="single-agency.html" title="">
+                                    <h4><small>Vacances de</small> <span>Noël</span>🎅🎄⛄</h4>
+                                </a>
+                                <p>Réservez-vite votre stage auprès de votre moniteur...</p>
+
+                                <div class="authorbox-social">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><a
+                                                href="https://www.facebook.com/centreequestre.goudelancourt/?locale=fr_FR"
+                                                target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a
+                                                href="https://www.instagram.com/explore/locations/1010368399/centre-equestre-goudelancourt/"
+                                                target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                        <li class="list-inline-item"><a href="page-contact.html"><i
+                                                    class="fa fa-envelope-o"></i></a></li>
+                                    </ul><!-- end list -->
+                                </div><!-- end share -->
+                            </div><!-- end publisher -->
+                        </div><!-- end details -->
+
+
+
+
+                    </div><!-- end col -->
+
+                    <div class="sidebar col-md-4">
+                        <div class="widget clearfix">
+                            <div class="banner-widget">
+                                <img src="{{ asset('upload/baby-poney.png') }}" alt="baby poney" class="img-fluid img-rounded">
+                            </div>
+                        </div>
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Baby Poney</h3>
+                            <div class="newsletter-widget">
+                                <p>Une première découverte du poney dès 3 ans, en douceur et en confiance.</p>
+
+                            </div><!-- end baby poney -->
+                        </div><!-- end widget -->
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">Tarifs /Activités</h3>
+                            <div class="post-widget">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5>Poney Club</h5>
+                                        <div class="blog-meta">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">Balade (30 min) : 10€</li><br>
+                                                <li class="list-inline-item">Initiation longe : 15€</li>
+                                            </ul>
+                                        </div><!-- end blog-meta -->
+                                        <h5>Stages</h5>
+                                        <div class="blog-meta">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item">Journée poney : 48€</li><br><br>
+                                                <li class="list-inline-item">1/2 Journée poney : 30€</li>
+                                                <li class="list-inline-item">Cotisation <span>de septembre N à septembre
+                                                        N+1</span> : 64€</li><br>
+                                                <li class="list-inline-item">Carte 5 leçons : 62€</li><br>
+                                                <li class="list-inline-item">License - de 18 ans : 29€</li>
+                                            </ul>
+                                        </div><!-- end blog-meta -->
+                                    </div>
+                                </div>
+
+                            </div><!-- end post-widget -->
+                        </div><!-- end widget -->
+
+
+                    </div><!-- end sidebar -->
+                </div><!-- end row -->
+
+            </div><!-- end container -->
+        </section>
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('video/poney-video.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+{% endblock %}

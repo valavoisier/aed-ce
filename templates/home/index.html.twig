@@ -1,20 +1,537 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Accueil - centre équestre Goudelancourt{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{# Hero vidéo plein écran : nav transparente superposée, pas de header-normal #}
+{# Twig considère un block vide comme "empty", donc on y met un libellé non vide pour que base.html.twig détecte bien la
+surcharge #}
+{% block header_variant %}header-transparent{% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block content %}
+{% include 'partials/headers/header-home.html.twig' %}
+<section id="decouverte" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 d-none d-md-block">
+                <div class="custom-module mt-5 pt-3">
+                    <img src="{{ asset('images/couple.png') }}" alt="" class="img-fluid" data-aos="fade-right">
+                </div><!-- end module -->
+            </div><!-- end col -->
+            <div class="col-md-7">
+                <div class="custom-module p40l">
+                    <h2>Envie de <mark>découvrir</mark> l'équitation<br>
+                        ou de vous <mark>perfectionner</mark>?</h2>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/valav/Projects/symfony-projects/clients/aed-ce/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/Users/valav/Projects/symfony-projects/clients/aed-ce/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+                    <p>Notre équipe vous accompagne à travers des activités variées adaptées à tous les âges, tous les
+                        niveaux et envies.</p>
+
+                    <hr class="invis">
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 first">
+                            <ul class="check">
+                                <li>Dressage</li>
+                                <li>Saut d'obstacles</li>
+                                <li>Cross</li>
+                                <li>Balades</li>
+                                <li>Equifun</li>
+                            </ul><!-- end check -->
+                        </div><!-- end col-lg-4 -->
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <ul class="check">
+                                <li>Cours collectifs</li>
+                                <li>Cours particuliers</li>
+                                <li>Compétition</li>
+                                <li>Stages</li>
+                                <li>Randonnées</li>
+                            </ul><!-- end check -->
+                        </div><!-- end col-lg-4 -->
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 last">
+                            <ul class="check">
+                                <li>Handi Cheval</li>
+                                <li>Animations scolaires</li>
+                                <li>Évènements</li>
+                                <li>ESAT</li>
+                            </ul><!-- end check -->
+                        </div><!-- end col-lg-4 -->
+                    </div><!-- end row -->
+
+                    <hr class="invis">
+
+                    <div class="btn-wrapper">
+                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                    </div>
+
+                </div><!-- end module -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+<section class="section db">
+    <div class="container">
+        <div class="section-title text-white text-center">
+            <h3>Nos moniteurs</h3>
+            <p>Découvrez notre équipe de moniteurs qualifiés et passionnés.</p>
+        </div><!-- end title -->
+        <div class="row text-center">
+            <div class="col-md-3 col-sm-6">
+                <div class="teammembers">
+                    <div class="entry">
+                        <img src="upload/aurelie.jpg" alt="Aurélie De Vlieger" class="img-fluid">
+                        <div class="magnifier">
+                            <div class="visible-buttons1 teambuttons">
+                                <p></p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                </div><!-- end social -->
+                            </div>
+                        </div>
+                    </div><!-- end box -->
+                    <div class="teamdesc">
+                        <h4>Aurélie De Vlieger</h4>
+                        <p>Monitrice BEES1, Responsable du centre</p>
+                    </div><!-- end teamdesc -->
+                </div><!-- end teammembers -->
+            </div><!-- end col -->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="teammembers">
+                    <div class="entry">
+                        <img src="upload/antoine.jpg" alt="Antoine Dehaye" class="img-fluid">
+                        <div class="magnifier">
+                            <div class="visible-buttons1 teambuttons">
+                                <p></p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                </div><!-- end social -->
+                            </div>
+                        </div>
+                    </div><!-- end box -->
+                    <div class="teamdesc">
+                        <h4>Antoine Dehaye</h4>
+                        <p>Moniteur BPJEPS,<br>Cours chevaux et poneys</p>
+                    </div><!-- end teamdesc -->
+                </div><!-- end teammembers -->
+            </div><!-- end col -->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="teammembers">
+                    <div class="entry">
+                        <img src="upload/lalie.jpg" alt="Eulalie Didot" class="img-fluid">
+                        <div class="magnifier">
+                            <div class="visible-buttons1 teambuttons">
+                                <p></p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                </div><!-- end social -->
+                            </div>
+                        </div>
+                    </div><!-- end box -->
+                    <div class="teamdesc">
+                        <h4>Eulalie Didot</h4>
+                        <p>Monitrice BPJEPS,<br>Cours chevaux et poneys</p>
+                    </div><!-- end teamdesc -->
+                </div><!-- end teammembers -->
+            </div><!-- end col -->
+
+            <div class="col-md-3 col-sm-6">
+                <div class="teammembers">
+                    <div class="entry">
+                        <img src="upload/emma.jpg" alt="Emma Colombo" class="img-fluid">
+                        <div class="magnifier">
+                            <div class="visible-buttons1 teambuttons">
+                                <p></p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                </div><!-- end social -->
+                            </div>
+                        </div>
+                    </div><!-- end box -->
+                    <div class="teamdesc">
+                        <h4>Emma Colombo</h4>
+                        <p>Monitrice BPJEPS,<br>Cours chevaux et poneys</p>
+                    </div><!-- end teamdesc -->
+                </div><!-- end teammembers -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
+<section class="section gb">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>Dernières actualités</h3>
+            <p>Maecenas sit amet tristique turpis. Quisque porttitor eros quis leo pulvinar, at hendrerit sapien
+                iaculis. Donec consectetur accumsan arcu, sit amet fringilla ex ultricies.</p>
+        </div><!-- end title -->
+
+        <div class="swiper swiper-courses">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="course-box">
+                        <div class="image-wrap entry">
+                            <img src="upload/course_01.jpg" alt="" class="img-fluid">
+                            <div class="magnifier">
+                                <a href="#" title=""><i class="flaticon-add"></i></a>
+                            </div>
+                        </div><!-- end image-wrap -->
+                        <div class="course-details">
+                            <h4>
+                                <small>Actualité 1</small>
+                                <a href="#" title="">Lorem ipsum dolor sit amet</a>
+                            </h4>
+                            <p>Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.</p>
+                        </div><!-- end details -->
+                        <div class="course-footer clearfix">
+                            <div class="float-start">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-user"></i> 21</a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-clock-o"></i> 15 Min.</a>
+                                    </li>
+                                </ul>
+                            </div><!-- end left -->
+
+                            <div class="float-end">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">post facebook</a></li>
+                                </ul>
+                            </div><!-- end left -->
+                        </div><!-- end footer -->
+                    </div><!-- end box -->
+                </div><!-- end col -->
+
+                <div class="swiper-slide">
+                    <div class="course-box">
+                        <div class="image-wrap entry">
+                            <img src="upload/course_02.jpg" alt="" class="img-fluid">
+                            <div class="magnifier">
+                                <a href="#" title=""><i class="flaticon-add"></i></a>
+                            </div>
+                        </div><!-- end image-wrap -->
+                        <div class="course-details">
+                            <h4>
+                                <small>Actualité 2</small>
+                                <a href="#" title="">Lorem ipsum dolor sit <amet></amet></a>
+                            </h4>
+                            <p>Curabitur condimentum velit non odio mattis tristique. Nam vitae orci aliquam. </p>
+                        </div><!-- end details -->
+                        <div class="course-footer clearfix">
+                            <div class="float-start">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-user"></i> 41</a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-clock-o"></i> 33 Min.</a>
+                                    </li>
+                                </ul>
+                            </div><!-- end left -->
+
+                            <div class="float-end">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">post facebook</a></li>
+                                </ul>
+                            </div><!-- end left -->
+                        </div><!-- end footer -->
+                    </div><!-- end box -->
+                </div><!-- end col -->
+
+                <div class="swiper-slide">
+                    <div class="course-box">
+                        <div class="image-wrap entry">
+                            <img src="upload/course_03.jpg" alt="" class="img-fluid">
+                            <div class="magnifier">
+                                <a href="#" title=""><i class="flaticon-add"></i></a>
+                            </div>
+                        </div><!-- end image-wrap -->
+                        <div class="course-details">
+                            <h4>
+                                <small>Actualité 3</small>
+                                <a href="#" title="">Lorem ipsum dolor sit amet</a>
+                            </h4>
+                            <p>Donec auctor nec nibh sit amet pulvinar. Mauris nulla elit, lacinia ac facilisis mattis.
+                            </p>
+                        </div><!-- end details -->
+                        <div class="course-footer clearfix">
+                            <div class="float-start">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-user"></i> 35</a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-clock-o"></i> 1 Hrs.</a>
+                                    </li>
+                                </ul>
+                            </div><!-- end left -->
+
+                            <div class="float-end">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">post facebook</a></li>
+                                </ul>
+                            </div><!-- end left -->
+                        </div><!-- end footer -->
+                    </div><!-- end box -->
+                </div><!-- end col -->
+
+                <div class="swiper-slide">
+                    <div class="course-box">
+                        <div class="image-wrap entry">
+                            <img src="upload/course_04.jpg" alt="" class="img-fluid">
+                            <div class="magnifier">
+                                <a href="#" title=""><i class="flaticon-add"></i></a>
+                            </div>
+                        </div><!-- end image-wrap -->
+                        <div class="course-details">
+                            <h4>
+                                <small>Actualité 4</small>
+                                <a href="#" title="">Lorem ipsum dolor sit amet</a>
+                            </h4>
+                            <p>Pellentesque ut enim dictum, interdum lorem eget, vulputate eros sed felis euismod.</p>
+                        </div><!-- end details -->
+                        <div class="course-footer clearfix">
+                            <div class="float-start">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-user"></i> 35</a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-clock-o"></i> 45 Min.</a>
+                                    </li>
+                                </ul>
+                            </div><!-- end left -->
+
+                            <div class="float-end">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">post facebook</a></li>
+                                </ul>
+                            </div><!-- end left -->
+                        </div><!-- end footer -->
+                    </div><!-- end box -->
+                </div><!-- end col -->
+
+                <div class="swiper-slide">
+                    <div class="course-box">
+                        <div class="image-wrap entry">
+                            <img src="upload/course_01.jpg" alt="" class="img-fluid">
+                            <div class="magnifier">
+                                <a href="#" title=""><i class="flaticon-add"></i></a>
+                            </div>
+                        </div><!-- end image-wrap -->
+                        <div class="course-details">
+                            <h4>
+                                <small>Actualité 5</small>
+                                <a href="#" title="">Lorem ipsum dolor sit amet</a>
+                            </h4>
+                            <p>Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.</p>
+                        </div><!-- end details -->
+                        <div class="course-footer clearfix">
+                            <div class="float-start">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-user"></i> 21</a></li>
+                                    <li class="list-inline-item"><a href="#"><i class="fa fa-clock-o"></i> 15 Min.</a>
+                                    </li>
+                                </ul>
+                            </div><!-- end left -->
+
+                            <div class="float-end">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">post facebook</a></li>
+                                </ul>
+                            </div><!-- end left -->
+                        </div><!-- end footer -->
+                    </div><!-- end box -->
+                </div><!-- end col -->
+            </div><!-- end swiper-wrapper -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div><!-- end swiper-courses -->
+
+        <hr class="invis">
+
+        <div class="section-button text-center">
+            <a href="#" class="btn btn-primary">Plus d'actualités</a>
+        </div>
+    </div><!-- end container -->
+</section>
+
+<section class="section db p120">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tagline-message text-center">
+                    <h3>Depuis 1974, ouverts 7j/7, nous offrons une équitation accessible à tous les niveaux.</h3>
+                </div>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end section -->
+
+<section class="section gb nopadtop">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="box m30">
+                    <i class="fa-solid fa-calendar-day"></i>
+                    <h4>Planning des cours</h4>
+                    <p>un planning clair pour organiser vos séances.</p>
+                    <a href="#" class="readmore">Voir</a>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                <div class="box m30">
+                    <i class="fa-solid fa-horse-head"></i>
+                    <h4>Cours chevaux et poney</h4>
+                    <p> Une équitation accessible et variée à tous avec des cours toute la semaine et une cavalerie
+                        adaptée. Des créneaux horaires libres pour réserver votre cheval et progresser en autonomie</p>
+                    <a href="#" class="readmore">Voir</a>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-md-3">
+                <div class="box m30">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h4>Compétition</h4>
+                    <p>Accompagnement vers la compétition adapté aux objectifs de chacun.</p>
+                    <a href="#" class="readmore">Voir</a>
+                </div>
+            </div><!-- end col -->
+        </div><!-- end row -->
+
+        <hr class="invis">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="box">
+                    <i class="fa-solid fa-home"></i>
+                    <h4>Infrastructures</h4>
+                    <p>Nos infrastructures comprennent un manège couvert, une carrière, un rond de longe, des paddocks
+                        ainsi qu’un parcours de cross, afin d’assurer des conditions optimales de confort et de sécurité
+                        pour nos cavaliers et nos chevaux.</p>
+                    <a href="#" class="readmore">Voir</a>
+                </div>
+            </div><!-- end col -->
+
+            <div class="col-md-6">
+                <div class="box">
+                    <i class="fa-solid fa-people-roof"></i>
+                    <h4>Atelier ESAT</h4>
+                    <p>Notre équipe est composée de professionnels accompagnés par des travailleurs en situation de
+                        handicap issus de l’ESAT.</p>
+                    <a href="#" class="readmore">Voir</a>
+                </div>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
+<section class="section db">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="stat-count">
+                    <h4 class="stat-timer">1974</h4>
+                    <h3><i class="fa-solid fa-calendar"></i> + 50 ans</h3>
+                    <p>52 ans d'éxistance </p>
+                </div><!-- stat-count -->
+            </div><!-- end col -->
+
+            <div class="col-lg-4 col-md-4">
+                <div class="stat-count">
+                    <h4 class="stat-timer">531</h4>
+                    <h3><i class="fa-solid fa-people-roof"></i> Licenciés</h3>
+                    <p>Nombre de licenciés au sein de notre structure.</p>
+                </div><!-- stat-count -->
+            </div><!-- end col -->
+
+            <div class="col-lg-4 col-md-4">
+                <div class="stat-count">
+                    <h4 class="stat-timer">35</h4>
+                    <h3><i class="fa-solid fa-horse"></i> Cavalerie</h3>
+                    <p>Nombre de chevaux et poneys au sein de notre cavalerie.</p>
+                </div><!-- stat-count -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
+
+
+<section class="section gb">
+    <div class="container">
+        <div class="section-title text-center">
+            <h3>Recent News</h3>
+            <p>Maecenas sit amet tristique turpis. Quisque porttitor eros quis leo pulvinar, at hendrerit sapien
+                iaculis. Donec consectetur accumsan arcu, sit amet fringilla ex ultricies.</p>
+        </div><!-- end title -->
+
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="blog-box">
+                    <div class="image-wrap entry">
+                        <img src="upload/blog_01.jpeg" alt="" class="img-fluid">
+                        <div class="magnifier">
+                            <a href="blog-single.html" title=""><i class="flaticon-add"></i></a>
+                        </div>
+                    </div><!-- end image-wrap -->
+
+                    <div class="blog-desc">
+                        <h4><a href="blog-single.html">How to learn perfect code with Javascript</a></h4>
+                        <p>Praesent at suscipit ligula. Suspendisse pre neque, quis suscipit enim. sed maximus, mia
+                            auctor.</p>
+                    </div><!-- end blog-desc -->
+
+                    <div class="post-meta">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#">21 March 2017</a></li>
+                            <li class="list-inline-item"><a href="#">by WP Destek</a></li>
+                            <li class="list-inline-item"><a href="#">14 Share</a></li>
+                        </ul>
+                    </div><!-- end post-meta -->
+                </div><!-- end blog -->
+            </div><!-- end col -->
+
+            <div class="col-lg-4 col-md-12">
+                <div class="blog-box">
+                    <div class="image-wrap entry">
+                        <img src="upload/blog_02.jpeg" alt="" class="img-fluid">
+                        <div class="magnifier">
+                            <a href="blog-single.html" title=""><i class="flaticon-add"></i></a>
+                        </div>
+                    </div><!-- end image-wrap -->
+
+                    <div class="blog-desc">
+                        <h4><a href="blog-single.html">The most suitable web design & development tutorials</a></h4>
+                        <p>Sed suscipit neque in erat posuere tristique aliquam porta vestibulum. Cras placerat
+                            tincidunt. </p>
+                    </div><!-- end blog-desc -->
+
+                    <div class="post-meta">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#">20 March 2017</a></li>
+                            <li class="list-inline-item"><a href="#">by WP Destek</a></li>
+                            <li class="list-inline-item"><a href="#">11 Share</a></li>
+                        </ul>
+                    </div><!-- end post-meta -->
+                </div><!-- end blog -->
+            </div><!-- end col -->
+
+            <div class="col-lg-4 col-md-12">
+                <div class="blog-box">
+                    <div class="image-wrap entry">
+                        <img src="upload/blog_03.jpeg" alt="" class="img-fluid">
+                        <div class="magnifier">
+                            <a href="blog-single.html" title=""><i class="flaticon-add"></i></a>
+                        </div>
+                    </div><!-- end image-wrap -->
+
+                    <div class="blog-desc">
+                        <h4><a href="blog-single.html">Design for all mobile devices! This is name "responsive"</a></h4>
+                        <p>Suspendisse scelerisque ex ac mattis molestie vel enim ut massa placerat faucibus sed ut dui
+                            vivamus. </p>
+                    </div><!-- end blog-desc -->
+
+                    <div class="post-meta">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#">19 March 2017</a></li>
+                            <li class="list-inline-item"><a href="#">by WP Destek</a></li>
+                            <li class="list-inline-item"><a href="#">44 Share</a></li>
+                        </ul>
+                    </div><!-- end post-meta -->
+                </div><!-- end blog -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
 {% endblock %}

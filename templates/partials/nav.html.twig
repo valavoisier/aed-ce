@@ -1,0 +1,143 @@
+<header class="header {{ header_class|default('') }}">
+    <div class="topbar clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 text-left">
+                    <p>
+                        <strong><i class="fa-solid fa-phone"></i></strong> 03 23 22 40 49 &nbsp;&nbsp;
+                        <strong><i class="fa-solid fa-envelope"></i></strong> <a
+                            href="mailto:coordo.equi@aed-asso.fr">coordo.equi@aed-asso.fr</a>
+                    </p>
+                </div><!-- end left -->
+                <div class="col-md-6 col-sm-6 d-none d-sm-block text-end">
+                    <div class="social">
+                        <a class="facebook" href="https://www.facebook.com/centreequestre.goudelancourt/?locale=fr_FR"
+                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="instagram"
+                            href="https://www.instagram.com/explore/locations/1010368399/centre-equestre-goudelancourt/"
+                            target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div><!-- end social -->
+                </div><!-- end left -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end topbar -->
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg yamm">
+            <div class="logo-normal">
+                <a class="navbar-brand" href="{{ path('app_home') }}"><img src="{{ asset('images/aed-logo.png') }}"
+                        alt="logo aed"></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_home') }}">Accueil</a>
+                    </li>
+
+                    <!-- ❌ ICI ÉTAIT L’ERREUR : un <li> ouvert puis un autre <li> sans fermeture -->
+                    <!-- ✔ Correction : on ferme correctement chaque <li> -->
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="infrastructures.html">A propos</a>
+                    </li>
+
+                    <li class="nav-item dropdown yamm-fw yamm-half">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" role="button"
+                            aria-expanded="false">Activités</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content clearfix">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <h4>Activités</h4>
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ path('app_activites_cours_chevaux') }}">Cours
+                                                        Chevaux</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ path('app_activites_poney_club') }}">Cours Poneys</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Stages</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Balades</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Compétitions</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ path('app_activites_pension') }}">Pensions</a>
+                                                </li>
+                                                <li>
+                                                    <a href="poney-club-copy.html">Événements</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Cours Particuliers</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Autres Activités</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="menu-widget text-center">
+                                                <div class="image-wrap entry">
+                                                    <!-- <img src="upload/course_01.jpg" alt="" class="img-fluid">-->
+                                                    <img src="{{ asset('images/ffe.svg') }}" alt=""
+                                                        class="img-fluid mb-1"><br>
+                                                    <div class="magnifier">
+                                                        <a href="#" title=""><i class="flaticon-add"></i></a>
+                                                    </div>
+                                                </div><!-- end image-wrap -->
+                                                <h5><a href="#">Licence 2027</a></h5>
+                                                <small>- 18 ans 29€</small>
+                                                <small>+ 18 ans 40€</small>
+                                                <a href="#" class="menu-button">Renouveler</a>
+                                            </div><!-- end widget -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_equi_handi') }}">Equi-Handi</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{{ path('app_infrastructures') }}">Infrastructures</a></li>
+
+                    <!--<li class="nav-item dropdown hassubmenu">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Shop <span class="fa fa-angle-down"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a class="dropdown-item" href="shop.html">Shop Layout</a></li>
+                                    <li><a class="dropdown-item" href="shop-single.html">Shop Single</a></li>
+                                </ul>
+                            </li>-->
+
+                    <li class="nav-item dropdown hassubmenu">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button"
+                            aria-expanded="false">Infos pratiques</a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a class="dropdown-item" href="{{ path('app_planning_tarifs') }}">Planing des
+                                    cours/Tarifs</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_cavalerie') }}">Notre Cavalerie</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{{ path('app_contact') }}">Contact</a></li>
+
+                    <!-- MODALE RECHERCHE AJAX -->
+                    <!--  <li class="iconitem"><a href="#" data-bs-toggle="modal" data-bs-target="#login-modal"><i class="fa fa-search"></i></a></li>
+                            <li class="iconitem"><a class="shopicon" href="shop-cart.html"><i class="fa fa-shopping-basket"></i> &nbsp;(0)</a></li> -->
+
+                </ul>
+            </div>
+        </nav><!-- end navbar -->
+    </div><!-- end container -->
+</header>
