@@ -74,85 +74,31 @@ surcharge #}
             <p>Découvrez notre équipe de moniteurs qualifiés et passionnés.</p>
         </div><!-- end title -->
         <div class="row text-center">
+            {% for m in moniteurs %}
             <div class="col-md-3 col-sm-6">
                 <div class="teammembers">
                     <div class="entry">
-                        <img src="upload/aurelie.jpg" alt="Aurélie De Vlieger" class="img-fluid">
-                        <div class="magnifier">
-                            <div class="visible-buttons1 teambuttons">
-                                <p></p>
-                                <div class="social-links">
-                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                </div><!-- end social -->
-                            </div>
-                        </div>
-                    </div><!-- end box -->
-                    <div class="teamdesc">
-                        <h4>Aurélie De Vlieger</h4>
-                        <p>Monitrice BEES1, Responsable du centre</p>
-                    </div><!-- end teamdesc -->
-                </div><!-- end teammembers -->
-            </div><!-- end col -->
+                        <img src="{{ asset('upload/' ~ m.photo) }}" alt="{{ m.nom }} {{ m.prenom }}" class="img-fluid">
 
-            <div class="col-md-3 col-sm-6">
-                <div class="teammembers">
-                    <div class="entry">
-                        <img src="upload/antoine.jpg" alt="Antoine Dehaye" class="img-fluid">
                         <div class="magnifier">
                             <div class="visible-buttons1 teambuttons">
-                                <p></p>
-                                <div class="social-links">
-                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                </div><!-- end social -->
-                            </div>
-                        </div>
-                    </div><!-- end box -->
-                    <div class="teamdesc">
-                        <h4>Antoine Dehaye</h4>
-                        <p>Moniteur BPJEPS,<br>Cours chevaux et poneys</p>
-                    </div><!-- end teamdesc -->
-                </div><!-- end teammembers -->
-            </div><!-- end col -->
+                                <img src="{{ asset('upload/' ~ m.diplome) }}" alt="Diplôme de {{ m.nom }} {{ m.prenom }}" class="img-fluid"><p></p>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="teammembers">
-                    <div class="entry">
-                        <img src="upload/lalie.jpg" alt="Eulalie Didot" class="img-fluid">
-                        <div class="magnifier">
-                            <div class="visible-buttons1 teambuttons">
-                                <p></p>
-                                <div class="social-links">
+                               <!-- <div class="social-links">
                                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                </div><!-- end social -->
+                                </div> end social -->
                             </div>
                         </div>
                     </div><!-- end box -->
-                    <div class="teamdesc">
-                        <h4>Eulalie Didot</h4>
-                        <p>Monitrice BPJEPS,<br>Cours chevaux et poneys</p>
-                    </div><!-- end teamdesc -->
-                </div><!-- end teammembers -->
-            </div><!-- end col -->
 
-            <div class="col-md-3 col-sm-6">
-                <div class="teammembers">
-                    <div class="entry">
-                        <img src="upload/emma.jpg" alt="Emma Colombo" class="img-fluid">
-                        <div class="magnifier">
-                            <div class="visible-buttons1 teambuttons">
-                                <p></p>
-                                <div class="social-links">
-                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                </div><!-- end social -->
-                            </div>
-                        </div>
-                    </div><!-- end box -->
                     <div class="teamdesc">
-                        <h4>Emma Colombo</h4>
-                        <p>Monitrice BPJEPS,<br>Cours chevaux et poneys</p>
+                        <h4>{{ m.nom }} {{ m.prenom }}</h4>
+                        <p>{{ m.qualification }}</p>
+                        <p>{{ m.description }}</p>
                     </div><!-- end teamdesc -->
                 </div><!-- end teammembers -->
             </div><!-- end col -->
+            {% endfor %}            
         </div><!-- end row -->
     </div><!-- end container -->
 </section>
@@ -203,7 +149,7 @@ surcharge #}
                 <div class="swiper-slide">
                     <div class="course-box">
                         <div class="image-wrap entry">
-                            <img src="upload/course_02.jpg" alt="" class="img-fluid">
+                            <img src="upload/course_01.jpg" alt="" class="img-fluid">
                             <div class="magnifier">
                                 <a href="#" title=""><i class="flaticon-add"></i></a>
                             </div>
@@ -236,7 +182,7 @@ surcharge #}
                 <div class="swiper-slide">
                     <div class="course-box">
                         <div class="image-wrap entry">
-                            <img src="upload/course_03.jpg" alt="" class="img-fluid">
+                            <img src="upload/course_01.jpg" alt="" class="img-fluid">
                             <div class="magnifier">
                                 <a href="#" title=""><i class="flaticon-add"></i></a>
                             </div>
@@ -270,7 +216,7 @@ surcharge #}
                 <div class="swiper-slide">
                     <div class="course-box">
                         <div class="image-wrap entry">
-                            <img src="upload/course_04.jpg" alt="" class="img-fluid">
+                            <img src="upload/course_01.jpg" alt="" class="img-fluid">
                             <div class="magnifier">
                                 <a href="#" title=""><i class="flaticon-add"></i></a>
                             </div>
@@ -350,7 +296,7 @@ surcharge #}
         <div class="row">
             <div class="col-md-12">
                 <div class="tagline-message text-center">
-                    <h3>Depuis 1974, ouverts 7j/7, nous offrons une équitation accessible à tous les niveaux.</h3>
+                    <h3>Depuis 1974, ouverts 7/7j, nous offrons une équitation accessible à tous les niveaux.</h3>
                 </div>
             </div><!-- end col -->
         </div><!-- end row -->
@@ -510,7 +456,7 @@ surcharge #}
             <div class="col-lg-4 col-md-12">
                 <div class="blog-box">
                     <div class="image-wrap entry">
-                        <img src="upload/blog_03.jpeg" alt="" class="img-fluid">
+                        <img src="upload/blog_01.jpeg" alt="" class="img-fluid">
                         <div class="magnifier">
                             <a href="blog-single.html" title=""><i class="flaticon-add"></i></a>
                         </div>

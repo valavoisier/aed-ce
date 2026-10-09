@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
-{% block title %}Contact - centre équestre Goudelancourt{% endblock %}
+{% block title %}Cours Chevaux - centre équestre Goudelancourt{% endblock %}
 
 {% block content %}
 {% include 'partials/headers/header-classic.html.twig' with {
         image: 'images/bai.png',
         title: 'Cours Chevaux',
-        breadcrumb: 'Centre Équestre'
+        breadcrumb: 'cours-chevaux'
     } 
 %}
  <section class="section">
@@ -132,19 +132,21 @@
                                         <h5>Centre Équestre</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Initiation longe : 20€</li><br>
-                                                <li class="list-inline-item">Cours particulier : 30€</li>
+                                                {% for tarif in centreEquestre %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix }} €
+                                                    </li><br>
+                                                {% endfor %}
                                             </ul>
                                         </div><!-- end blog-meta -->
                                         <h5>Stages</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Journée cheval : 60€</li><br>
-                                                <li class="list-inline-item">1/2 Journée cheval : 35€</li><br>
-                                                <li class="list-inline-item">Cotisation <span>de septembre N à septembre
-                                                        N+1</span> : 92€</li><br>
-                                                <li class="list-inline-item">Carte 5 leçons : 76€</li><br>
-                                                <li class="list-inline-item">License + de 18 ans : 40€</li>
+                                                {% for tarif in stageCheval %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix }} €
+                                                    </li><br>
+                                                {% endfor %}
                                             </ul>
                                         </div><!-- end blog-meta -->
                                     </div>

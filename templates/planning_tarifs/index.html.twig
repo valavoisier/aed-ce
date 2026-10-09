@@ -210,46 +210,52 @@
                                         <h5>Centre Équestre</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Initiation longe : 20€</li><br>
-                                                <li class="list-inline-item">Cours particulier : 30€</li><br>
-                                                <li class="list-inline-item">Cotisation <span>de septembre N à septembre
-                                                        N+1</span> : 92€</li><br>
-                                                <li class="list-inline-item">Carte 5 leçons : 76€</li><br>
-                                                <li class="list-inline-item">License + de 18 ans : 40€</li>
+                                                {% for tarif in centreEquestre %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix|number_format(2, ',', ' ') }} €
+                                                    </li><br>
+                                                {% endfor %}
                                             </ul>
                                         </div><!-- end blog-meta -->
                                         <h5>Stages chevaux</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Journée cheval : 60€</li><br>
-                                                <li class="list-inline-item">1/2 Journée cheval : 35€</li>
+                                                {% for tarif in stageCheval %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix|number_format(2, ',', ' ') }} €
+                                                    </li><br>
+                                                {% endfor %}
                                             </ul>
                                         </div><!-- end blog-meta -->
                                         <h5>Poney Club</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Balade (30 min) : 10€</li><br>
-                                                <li class="list-inline-item">Initiation longe : 15€</li><br>
-                                                <li class="list-inline-item">Cotisation <span>de septembre N à septembre
-                                                        N+1</span> : 64€</li><br>
-                                                <li class="list-inline-item">Carte 5 leçons : 62€</li><br>
-                                                <li class="list-inline-item">License - de 18 ans : 29€</li>
+                                                {% for tarif in poneyClub %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix|number_format(2, ',', ' ') }} €
+                                                    </li><br>
+                                                {% endfor %}
                                             </ul>
                                         </div><!-- end blog-meta -->
                                         <h5>Stages poneys</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Journée poney : 48€</li><br>
-                                                <li class="list-inline-item">1/2 Journée poney : 30€</li>
+                                                {% for tarif in stagePoney %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix|number_format(2, ',', ' ') }} €
+                                                    </li><br>
+                                                {% endfor %}
                                             </ul>
                                         </div><!-- end blog-meta -->
+                                             
                                         <h5>Pension mensuelle TTC</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Pension cheval : 290.29€</li><br>
-                                                <li class="list-inline-item">Pension Poney : 248.40€</li><br>
-                                                <li class="list-inline-item">Pension shetland : 195.89€</li><br>
-                                                <li class="list-inline-item">Foin : 40€</li><br>
+                                                {% for tarif in pension %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix|number_format(2, ',', ' ') }} €
+                                                    </li><br>
+                                                    {% endfor %}<br>
                                                 <li class="list-inline-item">Débourrage : sur devis</li>
                                             </ul>
                                         </div><!-- end blog-meta -->

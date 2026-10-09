@@ -28,9 +28,13 @@ cta_path: 'app_contact'
                         <p>Notre centre équestre, labellisé Équi Handi, accueille les personnes en situation de
                             handicap et propose une équitation accessible à chacun.</p>
                         <h4>Tarifs</h4>
-                        <p>séance Individuelle poney : 28€<br>
-                            séance Individuelle cheval : 30€<br>
-                            séance Collective : sur devis</p>
+                        {% for tarif in handi %}
+                            <p>
+                            {{ tarif.titre }} :
+                            {{ tarif.prix|number_format(2, ',', ' ') }} €
+                            </p>
+                        {% endfor %}
+                        <p>Séance collective : sur devis</p>
                     </div>
                 </div>
             </div><!-- end col -->
@@ -71,85 +75,31 @@ cta_path: 'app_contact'
             <p>Découvrez notre équipe de moniteurs qualifiés et passionnés.</p>
         </div><!-- end title -->
         <div class="row text-center">
+            {% for m in moniteurs %}
             <div class="col-md-3 col-sm-6">
                 <div class="teammembers">
                     <div class="entry">
-                        <img src="upload/aurelie.jpg" alt="Aurélie De Vlieger" class="img-fluid">
-                        <div class="magnifier">
-                            <div class="visible-buttons1 teambuttons">
-                                <p></p>
-                                <div class="social-links">
-                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                </div><!-- end social -->
-                            </div>
-                        </div>
-                    </div><!-- end box -->
-                    <div class="teamdesc">
-                        <h4>Aurélie De Vlieger</h4>
-                        <p>Monitrice BEES1, Responsable du centre</p>
-                    </div><!-- end teamdesc -->
-                </div><!-- end teammembers -->
-            </div><!-- end col -->
+                        <img src="{{ asset('upload/' ~ m.photo) }}" alt="{{ m.nom }} {{ m.prenom }}" class="img-fluid">
 
-            <div class="col-md-3 col-sm-6">
-                <div class="teammembers">
-                    <div class="entry">
-                        <img src="upload/antoine.jpg" alt="Antoine Dehaye" class="img-fluid">
                         <div class="magnifier">
                             <div class="visible-buttons1 teambuttons">
-                                <p></p>
-                                <div class="social-links">
-                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                </div><!-- end social -->
-                            </div>
-                        </div>
-                    </div><!-- end box -->
-                    <div class="teamdesc">
-                        <h4>Antoine Dehaye</h4>
-                        <p>Moniteur BPJEPS,<br>Cours chevaux et poneys</p>
-                    </div><!-- end teamdesc -->
-                </div><!-- end teammembers -->
-            </div><!-- end col -->
+                                <img src="{{ asset('upload/' ~ m.diplome) }}" alt="Diplôme de {{ m.nom }} {{ m.prenom }}" class="img-fluid"><p></p>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="teammembers">
-                    <div class="entry">
-                        <img src="upload/lalie.jpg" alt="Eulalie Didot" class="img-fluid">
-                        <div class="magnifier">
-                            <div class="visible-buttons1 teambuttons">
-                                <p></p>
-                                <div class="social-links">
+                               <!-- <div class="social-links">
                                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                </div><!-- end social -->
+                                </div> end social -->
                             </div>
                         </div>
                     </div><!-- end box -->
-                    <div class="teamdesc">
-                        <h4>Eulalie Didot</h4>
-                        <p>Monitrice BPJEPS,<br>Cours chevaux et poneys</p>
-                    </div><!-- end teamdesc -->
-                </div><!-- end teammembers -->
-            </div><!-- end col -->
 
-            <div class="col-md-3 col-sm-6">
-                <div class="teammembers">
-                    <div class="entry">
-                        <img src="upload/emma.jpg" alt="Emma Colombo" class="img-fluid">
-                        <div class="magnifier">
-                            <div class="visible-buttons1 teambuttons">
-                                <p></p>
-                                <div class="social-links">
-                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                </div><!-- end social -->
-                            </div>
-                        </div>
-                    </div><!-- end box -->
                     <div class="teamdesc">
-                        <h4>Emma Colombo</h4>
-                        <p>Monitrice BPJEPS,<br>Cours chevaux et poneys</p>
+                        <h4>{{ m.nom }} {{ m.prenom }}</h4>
+                        <p>{{ m.qualification }}</p>
+                        <p>{{ m.description }}</p>
                     </div><!-- end teamdesc -->
                 </div><!-- end teammembers -->
             </div><!-- end col -->
+            {% endfor %}            
         </div><!-- end row -->
     </div><!-- end container -->
 </section>

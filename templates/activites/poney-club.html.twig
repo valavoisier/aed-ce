@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
-{% block title %}Contact - centre équestre Goudelancourt{% endblock %}
+{% block title %}Poney Club - centre équestre Goudelancourt{% endblock %}
 
 {% block content %}
 {% include 'partials/headers/header-classic.html.twig' with {
         image: 'images/poney.png',
         title: 'Poney Club',
-        breadcrumb: 'Poney Club'
+        breadcrumb: 'poney-club'
     } 
 %}
 <section class="section">
@@ -120,19 +120,21 @@
                                         <h5>Poney Club</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Balade (30 min) : 10€</li><br>
-                                                <li class="list-inline-item">Initiation longe : 15€</li>
+                                                {% for tarif in poneyClub %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix|number_format(2, ',', ' ') }} €
+                                                    </li><br>
+                                                {% endfor %}
                                             </ul>
                                         </div><!-- end blog-meta -->
                                         <h5>Stages</h5>
                                         <div class="blog-meta">
                                             <ul class="list-inline">
-                                                <li class="list-inline-item">Journée poney : 48€</li><br><br>
-                                                <li class="list-inline-item">1/2 Journée poney : 30€</li>
-                                                <li class="list-inline-item">Cotisation <span>de septembre N à septembre
-                                                        N+1</span> : 64€</li><br>
-                                                <li class="list-inline-item">Carte 5 leçons : 62€</li><br>
-                                                <li class="list-inline-item">License - de 18 ans : 29€</li>
+                                                {% for tarif in stagePoney %}
+                                                    <li class="list-inline-item">
+                                                    {{ tarif.titre }} : {{ tarif.prix|number_format(2, ',', ' ') }} €
+                                                    </li><br>
+                                                {% endfor %}
                                             </ul>
                                         </div><!-- end blog-meta -->
                                     </div>
