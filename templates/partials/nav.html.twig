@@ -10,13 +10,32 @@
                     </p>
                 </div><!-- end left -->
                 <div class="col-md-6 col-sm-6 d-none d-sm-block text-end">
-                    <div class="social">
-                        <a class="facebook" href="https://www.facebook.com/centreequestre.goudelancourt/?locale=fr_FR"
-                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a class="instagram"
-                            href="https://www.instagram.com/explore/locations/1010368399/centre-equestre-goudelancourt/"
-                            target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    </div><!-- end social -->
+                    <div class="topbar-actions">
+                        <div class="social">
+                            <a class="facebook" href="https://www.facebook.com/centreequestre.goudelancourt/?locale=fr_FR"
+                                target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="instagram"
+                                href="https://www.instagram.com/explore/locations/1010368399/centre-equestre-goudelancourt/"
+                                target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        </div><!-- end social -->
+                        {% if app.user %}
+                            <div class="user-links">
+                                <a href="#" class="user-account">
+                                    <i class="fa-solid fa-user"></i>
+                                    {{ app.user.prenom }}
+                                </a>
+
+                                <a href="{{ path('app_logout') }}" class="logout-link">
+                                    Déconnexion
+                                </a>
+                            </div>
+                        {% else %}
+                            <a href="{{ path('app_login') }}" class="user-account">
+                                <i class="fa-solid fa-user"></i>
+                                Connexion
+                            </a>
+                        {% endif %}
+                    </div>
                 </div><!-- end left -->
             </div><!-- end row -->
         </div><!-- end container -->
@@ -38,9 +57,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{{ path('app_home') }}">Accueil</a>
                     </li>
-
-                    <!-- ❌ ICI ÉTAIT L’ERREUR : un <li> ouvert puis un autre <li> sans fermeture -->
-                    <!-- ✔ Correction : on ferme correctement chaque <li> -->
 
                     <li class="nav-item">
                         <a class="nav-link" href="infrastructures.html">A propos</a>

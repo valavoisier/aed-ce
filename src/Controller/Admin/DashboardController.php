@@ -2,6 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Controller\Admin\CavalerieCrudController;
+use App\Controller\Admin\MoniteurCrudController;
+use App\Controller\Admin\TarifCrudController;
+use App\Controller\Admin\UserCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -14,6 +18,10 @@ class DashboardController extends AbstractDashboardController
 {
     public function index(): Response
     {
+        $routeBuilder = $this->container->get(AdminUrlGenerator::class);
+        $url = $routeBuilder->setController(CavalerieCrudController::class)->generateUrl();
+
+        return $this->redirect($url);
         //return parent::index();
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
@@ -41,6 +49,13 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToRoute('Voir le site', 'fa fa-globe', 'app_home')->setLinkTarget('_blank');
+        yield MenuItem::section('Contenu');
+        yield MenuItem::linkTo(CavalerieCrudController::class, 'Cavalerie', 'fas fa-horse');
+        yield MenuItem::linkTo(MoniteurCrudController::class, 'Moniteurs', 'fas fa-user');
+        yield MenuItem::linkTo(TarifCrudController::class, 'Tarifs', 'fas fa-euro');
+        yield MenuItem::section('Utilisateurs');
+        yield MenuItem::linkTo(UserCrudController::class, 'Utilisateurs', 'fas fa-users');
         // yield MenuItem::linkTo(SomeCrudController::class, 'The Label', 'fas fa-list');
     }
 }

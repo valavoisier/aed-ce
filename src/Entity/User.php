@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
@@ -19,6 +20,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
+    #[Assert\NotBlank(message: 'Veuillez entrer une adresse email')]
     private ?string $email = null;
 
     /**
@@ -31,12 +33,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Assert\DisableAutoMapping] // never null-checked here: it's set manually after the "plainPassword" form field is validated and hashed
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez entrer votre prénom')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'Votre prénom doit contenir au moins {{ limit }} caractères',
+        max: 255,
+        maxMessage: 'Votre prénom ne peut pas dépasser {{ limit }} caractères'
+    )]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez entrer votre nom')]
+    #[Assert\Length(
+        min: 2,
+        minMessage: 'Votre nom doit contenir au moins {{ limit }} caractères',
+        max: 255,
+        maxMessage: 'Votre nom ne peut pas dépasser {{ limit }} caractères'
+    )]
     private ?string $nom = null;
 
     public function getId(): ?int
@@ -88,6 +105,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    public function isAdmin(): bool
+    {
+        return \in_array('ROLE_ADMIN', $this->roles, true);
+    }
+
+    public function setAdmin(bool $isAdmin): static
+    {
+        if ($isAdmin) {
+            if (!\in_array('ROLE_ADMIN', $this->roles, true)) {
+                $this->roles[] = 'ROLE_ADMIN';
+            }
+        } else {
+            $this->roles = array_values(array_diff($this->roles, ['ROLE_ADMIN']));
+        }
+
+        return $this;
+    }
+
     /**
      * @see PasswordAuthenticatedUserInterface
      */
@@ -110,7 +145,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $data = (array) $this;
         $data["\0" . self::class . "\0password"] = hash('crc32c', $this->password);
-        
+
         return $data;
     }
 
@@ -136,5 +171,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->nom = $nom;
 
         return $this;
+    }
+
+    public function getFullName(): string
+    {
+        return $this->prenom . ' ' . $this->nom;
     }
 }

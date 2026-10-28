@@ -23,7 +23,14 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var string $plainPassword */
-            $plainPassword = $form->get('plainPassword')->getData();
+            $plainPassword = $form->get('plainPassword')->get('first')->getData();
+
+            if (!is_string($plainPassword) || trim($plainPassword) === '') {
+                $this->addFlash('error', 'Le mot de passe est invalide.');
+                return $this->render('registration/register.html.twig', [
+                    'registrationForm' => $form,
+                ]);
+            }
 
             // encode the plain password
             $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
