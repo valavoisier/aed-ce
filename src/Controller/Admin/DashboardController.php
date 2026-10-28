@@ -53,7 +53,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToRoute('Voir le site', 'fa fa-globe', 'app_home')->setLinkTarget('_blank');
         yield MenuItem::section('Contenu');
-        yield MenuItem::linkTo(CavalerieCrudController::class, 'Cavalerie', 'fas fa-horse');
+        yield MenuItem::linkTo(CavalerieCrudController::class, 'Équidés', 'fas fa-horse');
         yield MenuItem::linkTo(MoniteurCrudController::class, 'Moniteurs', 'fas fa-user');
         yield MenuItem::linkTo(TarifCrudController::class, 'Tarifs', 'fas fa-euro');
         yield MenuItem::section('Utilisateurs');

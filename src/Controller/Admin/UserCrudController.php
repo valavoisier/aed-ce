@@ -36,4 +36,12 @@ class UserCrudController extends AbstractCrudController
                 ? 'Jamais stocké en clair : chiffré automatiquement à l\'enregistrement.'
                 : 'Laissez ce champ vide pour conserver le mot de passe actuel.');
     }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setEntityLabelInSingular('Utilisateur')
+            ->setEntityLabelInPlural('Utilisateurs');
+    }
+
 }
