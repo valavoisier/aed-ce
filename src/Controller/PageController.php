@@ -27,4 +27,10 @@ TarifRepository $tarifRepo): Response
     {
         return $this->render('page/infrastructures.html.twig');
     }
+
+    #[Route('/a-propos', name: 'app_a_propos')]
+    public function aPropos(): Response
+    {
+        return $this->render('page/a-propos.html.twig');
+    }
 }

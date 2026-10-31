@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+{% block title %}A propos - centre équestre Goudelancourt{% endblock %}
+
+{% block content %}
+{% include 'partials/headers/header-classic.html.twig' with {
+        image: 'images/complicite-ce.png',
+        title: 'A propos',
+        breadcrumb: 'a-propos'
+    } 
+%}
+ <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="content blog-list">
+                            <div class="blog-wrapper clearfix">
+                                <div class="blog-meta">
+                                    <small><a href="#">A propos</a></small>
+                                    <h3>l'AED centre équestre de Goudelancourt</h3>
+
+                                </div><!-- end blog-meta -->
+
+                                <div class="blog-media">
+                                    <img src="{{ asset('uploads/blog_01.jpg') }}" alt="" class="img-fluid img-rounded">
+                                </div><!-- end media -->
+
+                                <div class="blog-desc-big">
+                                    <p class="lead">À propos du Centre Équestre AED...</p>
+                                    <p>Implanté à Goudelancourt-lès-Berrieux depuis 1974, le Centre Équestre AED est bien plus qu'un simple club d'équitation. Véritable lieu de rencontre, d'apprentissage et de partage, il accueille cavaliers débutants comme confirmés dans un cadre naturel et convivial.</p>
+
+                                    <p> Depuis sa création, le centre s'attache à transmettre les valeurs qui font la richesse du monde équestre : le respect du cheval, la confiance, la persévérance et l'esprit d'équipe. Tout au long de l'année, il propose de nombreuses activités adaptées à tous les âges et à tous les niveaux : cours d'équitation, dressage, saut d'obstacles, randonnées, stages et animations autour du cheval et du poney. </p>
+
+                                    <blockquote class="text-center">
+                                        "Un atelier de l'ESAT..."
+                                    </blockquote>
+
+                                    <p>Le centre équestre s'inscrit également dans le projet de l'Association AED (Accomplir Ensemble un Devenir), dont la mission est de favoriser l'autonomie, l'inclusion sociale et l'épanouissement des personnes en situation de handicap.</p>
+
+                                    <p> Cette démarche se concrétise notamment par la présence de travailleurs de l'ESAT,/ qui participent activement à la vie quotidienne du centre. Aux côtés de l'équipe encadrante, ils assurent de nombreuses missions essentielles : entretien des écuries et des installations, soins courants aux chevaux, préparation du matériel, entretien des espaces verts et différentes manipulations simples des équidés. Leur travail contribue chaque jour au bon fonctionnement du centre et à la qualité d'accueil offerte aux cavaliers. </p>
+
+                                    <p>Aujourd'hui, le Centre Équestre AED demeure un lieu où passion du cheval, transmission des savoirs et valeurs humaines se rejoignent pour offrir à chacun une expérience équestre enrichissante dans un environnement bienveillant et accessible à tous.</p>
+
+                                    <hr class="invis">
+
+
+                                </div><!-- end desc -->
+                            </div><!-- end blog -->
+                        </div><!-- end content -->
+
+                    </div><!-- end col -->
+
+                    <div class="sidebar col-md-4">
+                        <div class="widget clearfix">
+                            <div class="banner-widget">
+                                <img src="{{ asset('uploads/aurelie.jpg') }}" alt="competition" class="img-fluid img-rounded">
+                            </div>
+                        </div>
+                        <div class="widget clearfix">
+                            <h3 class="widget-title">L'équipe</h3>
+                            <div class="newsletter-widget">
+                                <p>Notre équipe est composée de professionnels passionnés, dédiés à offrir le meilleur encadrement et accompagnement à nos cavaliers, nos stagiaires et membres de l'ESAT .</p>
+                                
+
+                            </div><!-- end baby poney -->
+                        </div><!-- end widget -->
+                        
+
+
+                    </div><!-- end sidebar -->
+                </div><!-- end row -->
+
+            </div><!-- end container -->
+        </section>
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('video/SpotClarbec_.mp4') }}" type="video/mp4">
+            </video>{}
+        </div>
+{% endblock %}

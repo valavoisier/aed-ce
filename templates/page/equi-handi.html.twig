@@ -8,7 +8,7 @@ surcharge #}
 
 {% block content %}
 {% include 'partials/headers/header-parallax.html.twig' with {
-image: 'upload/equi-handi4.png',
+image: 'uploads/equi-handi4.png',
 title: 'Equi - Handi',
 subtitle: "L'équitation accessible pour tous !",
 cta_label: 'Renseignements',
@@ -21,7 +21,7 @@ cta_path: 'app_contact'
         <div class="row event-boxes">
             <div class="col-md-4">
                 <div class="box m30">
-                    <img src="upload/label-handi.png" alt="" class="img-fluid">
+                    <img src="{{ asset('uploads/label-handi.png') }}" alt="" class="img-fluid">
                     <div class="event-desc">
                         <small>FFE</small>
                         <h4>Label Équi Handi club</h4>
@@ -41,7 +41,7 @@ cta_path: 'app_contact'
 
             <div class="col-md-4">
                 <div class="box m30">
-                    <img src="upload/ffe-equi-handi.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset('uploads/ffe-equi-handi.jpg') }}" alt="" class="img-fluid">
                     <div class="event-desc">
                         <small>Accompagnement individualisé</small>
                         <h4>Cavalerie adaptée</h4>
@@ -54,7 +54,7 @@ cta_path: 'app_contact'
 
             <div class="col-md-4">
                 <div class="box m30">
-                    <img src="upload/ffe-equi-handi.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset('uploads/ffe-equi-handi.jpg') }}" alt="" class="img-fluid">
                     <div class="event-desc">
                         <small>Nos objectifs</small>
                         <h4>Le bien-être au contact du cheval</h4>
@@ -79,11 +79,11 @@ cta_path: 'app_contact'
             <div class="col-md-3 col-sm-6">
                 <div class="teammembers">
                     <div class="entry">
-                        <img src="{{ asset('upload/' ~ m.photo) }}" alt="{{ m.nom }} {{ m.prenom }}" class="img-fluid">
+                        <img src="{{ asset('uploads/' ~ m.photo) }}" alt="{{ m.nom }} {{ m.prenom }}" class="img-fluid">
 
                         <div class="magnifier">
                             <div class="visible-buttons1 teambuttons">
-                                <img src="{{ asset('upload/' ~ m.diplome) }}" alt="Diplôme de {{ m.nom }} {{ m.prenom }}" class="img-fluid"><p></p>
+                                <img src="{{ asset('uploads/' ~ m.diplome) }}" alt="Diplôme de {{ m.nom }} {{ m.prenom }}" class="img-fluid"><p></p>
 
                                <!-- <div class="social-links">
                                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -110,7 +110,7 @@ cta_path: 'app_contact'
         <a href="#">
             <div class="row callout">
                 <div class="col-md-4 text-center">
-                    <img src="upload/label-equi-handi-blanc.png" style="max-width: 100px;" alt="" class="img-fluid"
+                    <img src="{{ asset('uploads/label-equi-handi-blanc.png') }}" style="max-width: 100px;" alt="" class="img-fluid"
                         data-aos="fade-right">
                 </div><!-- end col -->
 
@@ -134,7 +134,7 @@ cta_path: 'app_contact'
         <div class="row">
             <div class="col-md-4">
                 <div class="box testimonial">
-                    <p class="testiname"><strong><img src="upload/testimonial_01.png" alt="" class="img-circle">
+                    <p class="testiname"><strong><img src="{{ asset('uploads/testimonial_01.png') }}" alt="" class="img-circle">
                             Jenny LUXURY</strong></p>
                     <p>Quisque porttitor eros quis leo pulvinar, at hendrerit sapien iaculis. Donec consectetur
                         accumsan arcu, sit amet fringilla ex ultricies.</p>
@@ -150,7 +150,7 @@ cta_path: 'app_contact'
 
             <div class="col-md-4">
                 <div class="box testimonial">
-                    <p class="testiname"><strong><img src="upload/testimonial_02.png" alt="" class="img-circle">
+                    <p class="testiname"><strong><img src="{{ asset('uploads/testimonial_01.png') }}" alt="" class="img-circle">
                             Martin LEO</strong></p>
                     <p>Quisque porttitor eros quis leo pulvinar, at hendrerit sapien iaculis. Donec consectetur
                         accumsan arcu, sit amet fringilla ex ultricies.</p>
@@ -166,7 +166,7 @@ cta_path: 'app_contact'
 
             <div class="col-md-4">
                 <div class="box testimonial">
-                    <p class="testiname"><strong><img src="upload/testimonial_03.png" alt="" class="img-circle">
+                    <p class="testiname"><strong><img src="{{ asset('uploads/testimonial_01.png') }}" alt="" class="img-circle">
                             John DOE</strong></p>
                     <p>Quisque porttitor eros quis leo pulvinar, at hendrerit sapien iaculis. Donec consectetur
                         accumsan arcu, sit amet fringilla ex ultricies.</p>
@@ -184,7 +184,7 @@ cta_path: 'app_contact'
 </section>
 <div class="video-container">
     <video autoplay muted loop playsinline>
-        <source src="video/poney-video.mp4" type="video/mp4">
+        <source src="{{ asset('video/poney-video.mp4') }}" type="video/mp4">
     </video>
 </div>
 {% endblock %}

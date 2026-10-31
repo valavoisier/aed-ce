@@ -8,7 +8,7 @@ surcharge #}
 
 {% block content %}
 {% include 'partials/headers/header-parallax.html.twig' with {
-image: 'upload/cour2.jpg',
+image: 'uploads/cour2.jpg',
 title: 'Nos Infrastructures',
 subtitle: "Un environnement adapté au confort des cavaliers et des chevaux",
 cta_label: 'Découvrir',
@@ -21,7 +21,7 @@ cta_path: 'app_infrastructures'
         <div class="row event-boxes">
             <div class="col-md-4">
                 <div class="box m30">
-                    <img src="upload/ecurie.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset('uploads/ecurie.jpg') }}" alt="" class="img-fluid">
                     <div class="event-desc">
                         <small>Confort</small>
                         <h4>Écuries</h4>
@@ -32,7 +32,7 @@ cta_path: 'app_infrastructures'
 
             <div class="col-md-4">
                 <div class="box m30">
-                    <img src="upload/carriere.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset('uploads/carriere.jpg') }}" alt="" class="img-fluid">
                     <div class="event-desc">
                         <small>Espace</small>
                         <h4>Surfaces d'évolution</h4>
@@ -43,7 +43,7 @@ cta_path: 'app_infrastructures'
 
             <div class="col-md-4">
                 <div class="box m30">
-                    <img src="upload/paddock.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset('uploads/paddock.jpg') }}" alt="" class="img-fluid">
                     <div class="event-desc">
                         <small>Bien-être</small>
                         <h4>Paddocks</h4>
@@ -59,15 +59,15 @@ cta_path: 'app_infrastructures'
         <div class="row justify-content-center align-items-center text-center">
             <h3>Nos labels de qualité</h3>
             <div class="col-6 col-md-4">
-                <img src="upload/plaquette-efe.png" alt="Logo 1" class="img-fluid logo-item">
+                <img src="{{ asset('uploads/plaquette-efe.png') }}" alt="Logo 1" class="img-fluid logo-item">
             </div>
 
             <div class="col-6 col-md-4">
-                <img src="upload/plaquette-handi.png" alt="Logo 2" class="img-fluid logo-item">
+                <img src="{{ asset('uploads/plaquette-handi.png') }}" alt="Logo 2" class="img-fluid logo-item">
             </div>
 
             <div class="col-6 col-md-4">
-                <img src="upload/Logo_BEA.jpg" alt="Logo 3" class="img-fluid logo-item">
+                <img src="{{ asset('uploads/Logo_BEA.jpg') }}" alt="Logo 3" class="img-fluid logo-item">
             </div>
 
         </div>
@@ -76,7 +76,7 @@ cta_path: 'app_infrastructures'
 
 <div class="video-container">
     <video autoplay muted loop playsinline>
-        <source src="video/SpotClarbec_.mp4" type="video/mp4">
+        <source src="{{ asset('video/SpotClarbec_.mp4') }}" type="video/mp4">
     </video>
 </div>
 
